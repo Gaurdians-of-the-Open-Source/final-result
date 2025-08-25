@@ -1,0 +1,112 @@
+/* Upload.css - upload 페이지에만 필요한 스타일 */
+.upload-main {
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  width: 600px;
+}
+
+.upload-box {
+  width: 500px;
+  height: 250px;
+  border-radius: 15px;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 500;
+  color: #13113b;
+  border: 3px dashed rgba(122, 165, 255, 0.6);
+  padding-top: 20px;
+}
+
+.upload-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 12px;
+  transform: translateY(-0.3cm);
+}
+
+.upload-icon {
+  margin-bottom: 15px;
+}
+
+.upload-text {
+  font-size: 18px;
+  font-weight: 500;
+  color: #13113b;
+  margin-bottom: 5px;
+}
+
+.upload-text2 {
+  font-size: 14px;
+  font-weight: 400;
+  color: #777777;
+  margin-top: 0;
+}
+
+.upload-browse-btn {
+  background: rgba(186, 164, 255, 0.3);
+  color: #13113b;
+  padding: 9.5px 20px;
+  border-radius: 9999px;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.upload-browse-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(186, 164, 255, 0.5);
+}
+
+.upload-browse-btn:active {
+  transform: scale(0.98);
+}
+
+.upload-analyze-cta {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.upload-analyze-btn {
+  background: rgba(186, 164, 255, 0.3);
+  color: #13113b;
+  padding: 12px 28px;
+  border-radius: 9999px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.upload-analyze-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(186, 164, 255, 0.5);
+}
+
+.upload-analyze-btn:active {
+  transform: scale(0.98);
+}
+
+.upload-analyze-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}

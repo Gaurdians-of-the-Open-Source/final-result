@@ -1,0 +1,1 @@
+import { uploadFile } from '@/services/api';

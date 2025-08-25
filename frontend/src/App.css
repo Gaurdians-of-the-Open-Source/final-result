@@ -1,0 +1,282 @@
+/* 전체 화면 초기화 */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  background-color: #f0f0f0;
+  font-family: 'Myriad Variable Concept', sans-serif;
+}
+
+/* 화면 중앙 정렬 */
+.wrapper {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 4vh 0;
+  overflow-y: auto;
+}
+
+/* 16:9 비율 메인 박스 */
+.ratio-box {
+  position: relative;
+  width: 90vw;
+  max-width: 1600px;
+  min-height: 90vh;
+  background: linear-gradient(135deg, #d8f0ff, #eef0ff);
+  border-radius: 30px;
+  padding: 2vw 3vw;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 0.5px;
+}
+
+/* 하얀색 내용 박스 */
+.content-box {
+  background: linear-gradient(135deg, #ffffff, #b3d1ff) !important;
+  border-radius: 20px;
+  padding: 2rem;
+  margin-top: 1rem;
+  flex: 1;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+/* 헤더: 로고 + 메뉴 + 우측 버튼 */
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: clamp(8px, 1.5vw, 24px);
+  flex-wrap: nowrap;
+  min-width: 0;
+  padding: 1rem 0;
+}
+
+/* 왼쪽 박스: 로고 + 메뉴 */
+.left-box {
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 2vw, 30px);
+  flex-shrink: 1;
+  min-width: 0;
+}
+
+/* 로고 이미지 */
+.logo {
+  height: clamp(40px, 7vw, 100px);
+  max-width: clamp(100px, 15vw, 200px);
+  object-fit: contain;
+  vertical-align: middle;
+  width: auto;
+}
+
+/* 네비게이션 바 - 둥근 박스 */
+.nav-bar {
+  display: inline-flex;
+  align-items: center;
+  gap: clamp(8px, 1.2vw, 18px);
+  padding: clamp(8px, 1.2vw, 16px) clamp(16px, 2vw, 24px);
+  border-radius: 40px;
+  background: linear-gradient(135deg, #cfd9ff, #a6c1ee);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  flex-shrink: 1;
+  min-width: 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+/* 네비게이션 바 - 하나의 둥근 박스로 감싸기 */
+.folder-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: clamp(6px, 1vw, 14px);
+  padding: clamp(8px, 1vw, 14px) clamp(14px, 1.5vw, 24px);
+  border-radius: 30px;
+  background: linear-gradient(135deg, #cfd9ff, #a6c1ee);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  flex-shrink: 1;
+  min-width: 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  margin-left: 0.5rem;
+}
+
+/* 네비게이션 탭 */
+.folder-tab {
+  padding: clamp(8px, 1vw, 14px) clamp(14px, 1.5vw, 24px);
+  font-size: clamp(12px, 1.1vw, 16px);
+  border-radius: 30px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  white-space: nowrap;
+  background: transparent;
+  border: none;
+}
+
+.folder-tab:hover {
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  color: #4a4a4a;
+}
+
+.folder-tab.active {
+  background-color: #fff;
+  color: #4a4a4a;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 하얀색 내용 박스 - 파일철과 연결 */
+.content-box {
+  background: #ffffff;
+  border-radius: 20px 20px 20px 20px;
+  padding: 2rem;
+  margin-top: 0;
+  flex: 1;
+  box-shadow: 
+    0 0 20px rgba(74, 144, 226, 0.3),
+    0 0 40px rgba(74, 144, 226, 0.2),
+    0 0 60px rgba(74, 144, 226, 0.1),
+    0 8px 25px rgba(0, 0, 0, 0.08);
+  border: 3px solid #4a90e2;
+  border-top: none;
+  position: relative;
+  overflow: hidden;
+  margin-left: 0;
+  margin-right: 0;
+  position: relative;
+  margin-top: -3px;
+}
+
+.content-box::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #4a90e2, #5ba0f2, #4a90e2);
+  border-radius: 20px;
+  z-index: -1;
+  opacity: 0.6;
+  filter: blur(8px);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 메뉴 항목 */
+.nav-item {
+  padding: clamp(8px, 1vw, 12px) clamp(12px, 1.5vw, 20px);
+  font-size: clamp(14px, 1.2vw, 18px);
+  text-decoration: none;
+  color: #333;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-item:hover {
+  background: rgba(255, 255, 255, 0.9);
+  color: #4a4a4a;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.nav-item:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 우측 버튼 그룹 */
+.right-buttons {
+  display: flex;
+  align-items: center;
+  gap: clamp(6px, 1.2vw, 20px);
+  flex-shrink: 0;
+}
+
+/* 언어 선택, 연락 버튼 */
+.lang-select,
+.contact-btn {
+  padding: clamp(8px, 1vw, 14px) clamp(14px, 1.5vw, 24px);
+  font-size: clamp(12px, 1.1vw, 16px);
+  font-weight: 600;
+  border-radius: 30px;
+  color: #333;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.lang-select:hover,
+.contact-btn:hover {
+  background: #f8f9fa;
+  border-color: #d0d0d0;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.lang-select:active,
+.contact-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 공통 헤더 구조 - 모든 페이지에서 사용 가능 */
+.common-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+  padding: 0 2rem;
+}
+
+.common-header .left-box {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.common-header .logo {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+
+.common-header .nav-bar {
+  margin-left: 1rem;
+}
+
+.common-header .right-buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
